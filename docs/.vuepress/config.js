@@ -24,6 +24,23 @@ module.exports = {
             link: '/bug/'
           }
         ]
+      },
+      {
+        text: '工具',
+        items: [
+          {
+            text:'代码比对工具',
+            link: 'http://diff.xjie.me/'
+          },
+          {
+            text:'水印工具',
+            link: 'http://watermark.xjie.me/'
+          }
+        ]
+      },
+      {
+        text: 'GitHub',
+        link: 'https://github.com/ddchef/bolg'
       }
     ],
     sidebar:{
@@ -36,6 +53,9 @@ module.exports = {
           ''
         ]
       }
+  },
+  markdown: {
+    lineNumbers: true
   },
   dest: './dist'
 }
