@@ -1,9 +1,4 @@
 module.exports = {
-  title: "神奇的厨房",
-  description: "大厨师制作美味佳肴的神秘空间",
-  head: [
-    ['link', { rel: 'icon', href: '/logo.png' }]
-  ],
   themeConfig: {
     logo: '/logo.png',
     nav: [
@@ -54,8 +49,18 @@ module.exports = {
         ]
       }
   },
+  plugins: [
+    '@vuepress/back-to-top',
+    '@vuepress/active-header-links',
+    '@vuepress/nprogress'
+  ],
   markdown: {
     lineNumbers: true
   },
+  title: "神奇的厨房",
+  description: "大厨师制作美味佳肴的神秘空间",
+  head: [
+    ['link', { rel: 'icon', href: '/logo.png' }]
+  ],
   dest: './dist'
 }
