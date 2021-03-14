@@ -42,7 +42,8 @@ module.exports = {
         '/linux/':[
           '',
           'Docker化部署Ghost',
-          'Vue-History-模式下nginx配置'
+          'Vue-History-模式下nginx配置',
+          'github-action自动话部署vuepress'
         ],
         '/bug/':[
           ''
