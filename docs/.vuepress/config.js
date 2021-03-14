@@ -61,7 +61,19 @@ module.exports = {
   title: "神奇的厨房",
   description: "大厨师制作美味佳肴的神秘空间",
   head: [
-    ['link', { rel: 'icon', href: '/logo.png' }]
+    ['link', { rel: 'icon', href: '/logo.png' }],
+    [
+      'script',
+      {},
+      `var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.defer = true
+          hm.src = "https://hm.baidu.com/hm.js?2e7e265eb2344dc6aa19ca81622cd9ac";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();` 
+    ]
   ],
   dest: './dist'
 }
