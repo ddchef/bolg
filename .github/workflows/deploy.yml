@@ -18,7 +18,7 @@ jobs:
         node-version: '14'
 
     - name: Build
-      run: pnpm install && npm run build
+      run: npm install && npm run build
 
     - name: Deploy
       uses: easingthemes/ssh-deploy@v2.1.5
