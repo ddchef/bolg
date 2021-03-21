@@ -75,5 +75,8 @@ module.exports = {
         })();` 
     ]
   ],
+  scss: {
+    
+  },
   dest: './dist'
 }

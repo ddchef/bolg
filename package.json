@@ -12,6 +12,11 @@
     "@vuepress/plugin-active-header-links": "^1.8.2",
     "@vuepress/plugin-back-to-top": "^1.8.2",
     "@vuepress/plugin-nprogress": "^1.8.2",
+    "less": "^4.1.1",
+    "less-loader": "^8.0.0",
+    "pug-plain-loader": "^1.1.0",
+    "sass": "^1.32.8",
+    "sass-loader": "^7.3.1",
     "vuepress": "^1.8.2"
   }
 }
