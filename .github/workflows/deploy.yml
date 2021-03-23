@@ -31,8 +31,8 @@ jobs:
         TARGET: ${{ secrets.REMOTE_TARGET }}
 
     - name: SendMessage
-      uses: CamiloGarciaLaRotta/watermelon-http-client@v1
+      uses: fjogeleit/http-request-action@master
       with:
         url: ${{ secrets.WEBHOOK_DINGDING }}
-        method: post
-        data: '{"msgtype": "text","text": {"content": "博客(www.xjie.me)构建部署完成"}}'
+        method: 'POST'
+        data: '{"msgtype": "text","text": {"content": "博客构建部署完成 www.xjie.me"}}'
