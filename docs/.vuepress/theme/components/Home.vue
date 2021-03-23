@@ -7,13 +7,25 @@
 <script>
 export default {
   name: "Home",
+  data(){
+    return {
+      cacheEvent: null
+    }
+  },
   mounted() {
+    function debounce(fnc,delay){
+      let timer = null
+      return function(){
+        clearTimeout(timer)
+        timer = setTimeout(fnc,delay)
+      }
+    }
     let canvas = document.querySelector("#canvas"),
       ctx = canvas.getContext("2d");
-    window.onresize=()=>{
+    window.onresize=debounce(()=>{
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
-    }
+    },300)
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     let config = {
@@ -156,13 +168,14 @@ export default {
       window.requestAnimFrame(frame);
     };
 
-    // Click listener
-    document.body.addEventListener("click", function (event) {
+    this.cacheEvent = function (event) {
       let x = event.clientX,
         y = event.clientY;
       cleanUpArray();
       initParticles(config.particleNumber, x, y);
-    });
+    }
+    // Click listener
+    document.body.addEventListener("click", this.cacheEvent);
 
     // First Frame
     frame();
@@ -170,6 +183,10 @@ export default {
     // First particle explosion
     initParticles(config.particleNumber);
   },
+  beforeDestroy(){
+    function noop (){}
+    window.onresize = noop
+  }
 };
 </script>
 <style lang="scss" scoped>
@@ -188,6 +205,19 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+    &::after{
+      content: '';
+      display: inline-block;
+      width: 1rem;
+      position: absolute;
+      top: 38px;
+      right: -17px;
+      animation: blink-caret .75s step-end infinite;
+    }
   }
+}
+@keyframes blink-caret {
+  from, to { border: 1px solid transparent; }
+  50% { border: 1px solid; }
 }
 </style>
