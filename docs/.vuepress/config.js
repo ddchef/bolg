@@ -6,6 +6,10 @@ module.exports = {
         text: '学习',
         items:[
           {
+            text:'前端架构',
+            link: '/framework/'
+          },
+          {
             text:'linux',
             link: '/linux/'
           }
@@ -39,6 +43,9 @@ module.exports = {
       }
     ],
     sidebar:{
+        // '/framework/':[
+        //   '',
+        // ],
         '/linux/':[
           '',
           'Docker化部署Ghost',

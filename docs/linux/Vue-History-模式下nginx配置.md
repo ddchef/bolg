@@ -14,13 +14,23 @@ location / {
 因为是静态资源配置，所以`/zh/component`会被解析静态资源地址为`/usr/share/nginx/html/zh/component/index.html`,我们的index.html是放在了*html*文件夹里面，所以并没有 zh/component/index.html 这个资源。
 ## 解决
 先放解决配置:
-```nginx
+```nginx {4}
 location / {
     root   /usr/share/nginx/html;
     index  index.html index.htm;
     try_files       $uri $uri/ /index.html;
+    # /index.html 需要和location保持一致，参考下面的配置
 }
 ```
 其它配置基本不变，只要加上**第4行**的配置就行了。
+
+## 扩展(非根目录情况)
+```nginx {4}
+location /test {
+    root   /usr/share/nginx/html;
+    index  index.html index.htm;
+    try_files       $uri $uri/ /test/index.html; # 注意这边配置的变化
+}
+```
 ## 原理
 如果我访问的路径是 **http://xxx.xx/zh/component** ，第4行的意思是，先检查 **/usr/share/nginx/html/zh/component** 有没有该资源，再检查 **/usr/share/nginx/html/zh/component/index.html** ，还是没有的话就返回 **/usr/share/nginx/html/index.html**
