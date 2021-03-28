@@ -43,9 +43,9 @@ module.exports = {
       }
     ],
     sidebar:{
-        // '/framework/':[
-        //   '',
-        // ],
+        '/framework/':[
+          '',
+        ],
         '/linux/':[
           '',
           'Docker化部署Ghost',
