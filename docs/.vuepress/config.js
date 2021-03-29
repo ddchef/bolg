@@ -53,7 +53,8 @@ module.exports = {
           'github-action自动话部署vuepress'
         ],
         '/bug/':[
-          ''
+          '',
+          'vue嵌套iframe导致回退按钮无效'
         ]
       }
   },
