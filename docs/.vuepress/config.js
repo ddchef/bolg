@@ -61,7 +61,20 @@ module.exports = {
   plugins: [
     '@vuepress/back-to-top',
     '@vuepress/active-header-links',
-    '@vuepress/nprogress'
+    '@vuepress/nprogress',
+    [
+      'vuepress-plugin-comment',
+      {
+        choosen: 'valine', 
+        // options选项中的所有参数，会传给Valine的配置
+        options: {
+          el: '#valine-vuepress-comment',
+          appId: '7s2pPmI2xbVXrjMfFLijceos-MdYXbMMI',
+          appKey: 'blkaon0ltRyOv1BsnsKXgsTv',
+          path: '<%- frontmatter.to.path %>'
+        }
+      }
+    ]
   ],
   markdown: {
     lineNumbers: true
