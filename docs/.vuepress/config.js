@@ -1,6 +1,22 @@
 module.exports = {
   themeConfig: {
     logo: '/logo.png',
+    sidebar:{
+        '/framework/':[
+          '',
+          'webpack-dev-server不支持热更新'
+        ],
+        '/linux/':[
+          '',
+          'Docker化部署Ghost',
+          'Vue-History-模式下nginx配置',
+          'github-action自动话部署vuepress'
+        ],
+        '/bug/':[
+          '',
+          'vue嵌套iframe导致回退按钮无效'
+        ]
+      },
     nav: [
       {
         text: '学习',
@@ -41,22 +57,7 @@ module.exports = {
         text: 'GitHub',
         link: 'https://github.com/ddchef/bolg'
       }
-    ],
-    sidebar:{
-        '/framework/':[
-          '',
-        ],
-        '/linux/':[
-          '',
-          'Docker化部署Ghost',
-          'Vue-History-模式下nginx配置',
-          'github-action自动话部署vuepress'
-        ],
-        '/bug/':[
-          '',
-          'vue嵌套iframe导致回退按钮无效'
-        ]
-      }
+    ]
   },
   plugins: [
     '@vuepress/back-to-top',
