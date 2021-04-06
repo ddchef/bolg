@@ -1,4 +1,11 @@
 module.exports = {
+  locales:{
+    '/': {
+      lang: 'zh-CN', // 将会被设置为 <html> 的 lang 属性
+      title: "神奇的厨房",
+      description: "大厨师制作美味佳肴的神秘空间",
+    },
+  },
   themeConfig: {
     logo: '/logo.png',
     sidebar:{
