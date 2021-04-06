@@ -4,7 +4,8 @@ module.exports = {
     sidebar:{
         '/framework/':[
           '',
-          'webpack-dev-server不支持热更新'
+          'webpack-dev-server不支持热更新',
+          '项目集成husky-lint_staged_commitlint'
         ],
         '/linux/':[
           '',
